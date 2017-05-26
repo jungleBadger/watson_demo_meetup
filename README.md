@@ -16,4 +16,4 @@ The missing files and piece codes are available within the `cheat` folder. Just 
 
 ## References
 * [Watson Developer Cloud](https://www.npmjs.com/package/watson-developer-cloud) node package
-* [Watson Developer Group](bit.ly/wdc-brazil)@ Slack For exchanging information, networking, helps and general information about Watson APIs
+* [Watson Developer Group](https://bit.ly/wdc-brazil) @ Slack For exchanging information, networking, helps and general information about Watson APIs
