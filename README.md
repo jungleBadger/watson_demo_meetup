@@ -2,7 +2,7 @@
 
 ## How to get started
 * Download or clone this repository
-* Create a [IBM Bluemix](ng.bluemix.net) account if you don't have one
+* Create an [IBM Bluemix](ng.bluemix.net) account if you don't have one
 * Create [Watson Text To Speech](https://www.ibm.com/watson/developercloud/doc/text-to-speech/index.html) service
 * Create [Watson Speech To Text](https://www.ibm.com/watson/developercloud/doc/speech-to-text/index.html) service
 * Create [Watson Conversation](https://www.ibm.com/watson/developercloud/doc/conversation/index.html) service
