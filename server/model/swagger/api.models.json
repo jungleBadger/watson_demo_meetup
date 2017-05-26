@@ -1,0 +1,136 @@
+{
+  "/askWatson": {
+    "post": {
+      "tags": [
+        "Watson"
+      ],
+      "summary": "Send a text question to be processed by Watson Conversation API",
+      "parameters": [
+        {
+          "name": "question",
+          "in": "query",
+          "description": "Natural Language Question to be consumed by Watson API",
+          "required": true,
+          "type": "string"
+        }, {
+          "name": "context",
+          "in": "body",
+          "description": "Context object used to track the whole conversation context. Acquired by calling the sendMessage api once",
+          "required": false,
+          "schema": {
+            "$ref": "#/definitions/Context"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "schema": {
+            "$ref": "#/definitions/Profile"
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/convertAudioToText": {
+    "post": {
+      "tags": [
+        "Watson"
+      ],
+      "summary": "Receives a .wav audio file and converts it into text using Watson Speech to Text API",
+      "parameters": [
+        {
+          "name": "audio",
+          "in": "formData",
+          "description": ".wav Audio file to be converted in a text string",
+          "required": true,
+          "type": "file"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "schema": {
+            "$ref": "#/definitions/Profile"
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/convertTextToAudio": {
+    "post": {
+      "tags": [
+        "Watson"
+      ],
+      "summary": "Receives a text string and converts it into .wav audio file using Watson Text to Speech API",
+      "parameters": [{
+        "name": "textMessage",
+        "in": "formData",
+        "description": "Text string to be converted to audio file",
+        "required": true,
+        "type": "string"
+      }],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "schema": {
+            "$ref": "#/definitions/Profile"
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  },
+  "/downloadAudio": {
+    "get": {
+      "tags": [
+        "System"
+      ],
+      "summary": "Download a file existent on the file system",
+      "parameters": [{
+        "name": "fileName",
+        "in": "query",
+        "description": "File name identifier",
+        "required": true,
+        "type": "string"
+      }, {
+        "name": "filePath",
+        "in": "query",
+        "description": "File path identifier",
+        "required": true,
+        "type": "string"
+      }],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "schema": {
+            "$ref": "#/definitions/Profile"
+          }
+        },
+        "default": {
+          "description": "Unexpected error",
+          "schema": {
+            "$ref": "#/definitions/Error"
+          }
+        }
+      }
+    }
+  }
+}

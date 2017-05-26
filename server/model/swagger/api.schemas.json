@@ -1,0 +1,58 @@
+{
+  "Question": {
+    "type": "object",
+    "properties": {
+      "question": {
+        "type": "string",
+        "example": "How can I ask something?"
+      }
+    }
+  },
+  "Context": {
+    "type": "object",
+    "properties": {
+      "context": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "example": "1234a123-a1bc-1a23-ab1c-1a2b34c5d678"
+          },
+          "system": {
+            "type": "object",
+            "$ref": "#/definitions/Context-System"
+          },
+          "dialog_turn_counter": {
+            "type": "integer",
+            "example": 0
+          },
+          "dialog_request_counter": {
+            "type": "integer",
+            "example": 0
+          }
+        }
+      },
+      "System": {
+        "type": "object",
+        "properties": {
+          "dialog_stack": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "#/definitions/Context-System-DialogStack"
+            }
+          },
+          "DialogStack": {
+            "type": "object",
+            "properties": {
+              "dialog_node": {
+                "type": "string",
+                "example": "root"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

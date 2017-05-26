@@ -1,0 +1,66 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #BA8FF7;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 0px 3px 1px gainsboro;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+header img {
+    max-height: 100%;
+    max-width: 100%;
+
+}
+
+header h3 {
+    margin: 0 10px;
+}
+
+#start {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 0;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    BOX-SHADOW: 1PX 1PX 1PX 1PX RGBA(0, 0, 0, .2);
+}
+
+#audio {
+    display: none;
+}
+
+#start.playing {
+    background-image: url("../assets/icons/mic_black.svg");
+
+}
+
+#start.stopped {
+    background-image: url("../assets/icons/mic_white.svg");
+}
+
+body > div {
+    DISPLAY: FLEX;
+    FLEX-DIRECTION: COLUMN;
+    JUSTIFY-CONTENT: CENTER;
+    ALIGN-ITEMS: CENTER;
+}
+
+canvas {
+    margin: 50px;
+}

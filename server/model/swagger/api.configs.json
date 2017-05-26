@@ -1,0 +1,22 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Watson Conversation Module",
+    "description": "API documentation for a Conversation provider",
+    "termsOfServiceUrl": "",
+    "contact": "dcerag@br.ibm.com",
+    "version": "1.0.1"
+  },
+  "host": "",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ]
+}
