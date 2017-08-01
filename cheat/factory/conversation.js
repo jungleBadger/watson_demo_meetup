@@ -5,17 +5,21 @@
     "use strict";
 
     var watsonConversation = require("watson-developer-cloud/conversation/v1"),
-        conversationInstance = new watsonConversation(require("../configs/wcsConfig"));
+        watsonConfigs = require("../configs/wcsConfig"),
+        conversationInstance = new watsonConversation(watsonConfigs);
 
-    module.exports = function (conversationCredentials) {
+    module.exports = function () {
         return {
             "sendMessage": function (options) {
-                console.log(options);
                 return new Promise(function (resolve, reject) {
                     if (!options) {
                         return reject("Can not proceed without options object");
                     }
-                    options.workspace_id = "ceb4e601-39fd-4efc-ab51-e9ce418b9b57";
+
+                    if (!options.workspace_id) {
+                        options.workspace_id = watsonConfigs.workspace_id;
+                    }
+
                     conversationInstance.message(options, function (err, response) {
                         if (err) {
                             console.log(err);
