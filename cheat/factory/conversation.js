@@ -5,8 +5,7 @@
     "use strict";
 
     var watsonConversation = require("watson-developer-cloud/conversation/v1"),
-        credentials = require("../configs/wcsConfig"),
-        conversationInstance = new watsonConversation(credentials);
+        conversationInstance = new watsonConversation(require("../configs/wcsConfig"));
 
     module.exports = function (conversationCredentials) {
         return {
@@ -16,7 +15,7 @@
                     if (!options) {
                         return reject("Can not proceed without options object");
                     }
-                    options.workspace_id = credentials.workspace_id;
+                    options.workspace_id = "ceb4e601-39fd-4efc-ab51-e9ce418b9b57";
                     conversationInstance.message(options, function (err, response) {
                         if (err) {
                             console.log(err);

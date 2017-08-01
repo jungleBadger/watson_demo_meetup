@@ -12,6 +12,23 @@
     module.exports = function () {
         return {
             "convertAudioToText": function (filePath) {
+                return new Promise(function (resolve, reject) {
+                    var params = {
+                        "audio": fs.createReadStream(filePath),
+                        "content_type": "audio/wav",
+                        "model": "pt-BR_BroadbandModel"
+                    };
+
+                    speech_to_text.recognize(params, function (error, transcript) {
+                        if (error) {
+                            reject(error);
+                        } else {
+                            console.log(transcript);
+                            resolve(transcript);
+                        }
+                    });
+
+                });
             }
         };
     };
